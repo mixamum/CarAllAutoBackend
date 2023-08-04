@@ -14,9 +14,9 @@ import lombok.ToString;
 public class Car {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private int id;
+    private Integer id;
 
     @Column(name="make")
     private String make;
@@ -24,14 +24,15 @@ public class Car {
     @Column(name="model")
     private String model;
 
-    @Column(name="year")
-    private int year;
-
-    @Column(name="mileage")
-    private int mileage;
-
     @Column(name="color")
     private String color;
+
+    @Column(name="year")
+    private Integer year;
+
+    @Column(name="mileage")
+    private Integer mileage;
+
 
     public Car(String make, String model, int year, int mileage, String color) {
         this.make = make;

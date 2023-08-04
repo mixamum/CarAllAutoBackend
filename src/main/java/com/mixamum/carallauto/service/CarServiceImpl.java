@@ -4,6 +4,7 @@ import com.mixamum.carallauto.dao.CarRepository;
 import com.mixamum.carallauto.entity.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.swing.text.html.Option;
 import java.util.List;
@@ -35,11 +36,13 @@ public class CarServiceImpl implements CarService{
         return theCar;
     }
 
+    @Transactional
     @Override
     public Car save(Car theCar) {
         return carRepository.save(theCar);
     }
 
+    @Transactional
     @Override
     public void deleteById(int theId) {
         carRepository.deleteById(theId);
